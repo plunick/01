@@ -1,0 +1,70 @@
+# Математические вычисления
+def add(x,y):
+    return x + y  #Сложение
+
+def subtraction(x,y):
+    return x - y  #Вычитание
+
+def multiply(x,y):
+    return x * y  #Умножение
+
+def divigion(x,y):
+    if y != 0:
+        return x / y  #Деление
+    else:  
+        return 'Error: kakoi 0 muzhik..' #Ошибка при делении на 0
+
+def exponentiation(x,y):
+    return x ** y  #Возведение в степень
+
+def logarithm(x,y):
+    import math
+    return math.log(x,y)  #Логарифм
+
+def round_up(x):
+    import math
+    return math.ceil(x)  #Округление в большую сторону
+
+def round_doun(x):
+    import math
+    return math.floor(x)  #Округление в меньшую сторону
+
+while True:
+    print('Выберете действие и напишите его в чат:')  #Выбор действий
+    print('Сложение')
+    print('Вычитание')
+    print('Умножение')
+    print('Деление')
+    print('Возведение в степень')
+    print('Логарифм')
+    print('Округление в большую сторону')
+    print('Округление в меньшую сторону')
+
+    user_input = input('Ввод:')
+    if user_input in ( 'Округление в большую сторону', 'Округление в меньшую сторону'):  #Выбор действий, которые требует только одно число для ввода
+        num = float(input('Введите число: '))
+    else:  #Остальные действия, требующие два числа на ввод
+        num1 = float(input("Первое число: "))
+        num2 = float(input("Второе число: "))
+    #Вызов необходимой рекурсивной функции, зависящий от выбора команды пользователем
+    if user_input == 'Сложение':
+        print(add(num1, num2))
+    elif user_input == 'Вычитание':
+        print(subtraction(num1, num2))
+    elif user_input == 'Умножение':
+        print(multiply(num1, num2))
+    elif user_input == 'Деление':
+        print(divigion(num1, num2))
+    elif user_input == 'Возведение в степень':
+        print(exponentiation(num1, num2))
+    elif user_input == 'Логарифм':
+        print(logarithm(num1, num2))
+    elif user_input == 'Округление в большую сторону':
+        print(round_up(num))
+    elif user_input == 'Округление в меньшую сторону':
+        print(round_doun(num))
+    num3 = float(input("\n1 - Показать команды \n2 - Завершить \n"))  #Выбор: продолжить пользование калькулятором или завершить работу
+    if num3 == 1:
+        continue
+    else:
+        break    
